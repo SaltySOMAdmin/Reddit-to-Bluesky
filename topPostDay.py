@@ -6,7 +6,7 @@ import warnings
 import re
 from typing import List, Dict
 import requests
-import config  # Import the config file
+import config  # Import the config file with credentials
 
 # Configure logging
 logging.basicConfig(
