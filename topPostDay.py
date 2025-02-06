@@ -5,11 +5,12 @@ import datetime
 import warnings
 import re
 from typing import List, Dict
-import requests  # Added import for requests
+import requests
+import config  # Import the config file
 
 # Configure logging
 logging.basicConfig(
-    filename="/home/log.txt",
+    filename="/home/ubuntu/bluesky/log.txt",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
@@ -96,16 +97,16 @@ def parse_facets(text: str) -> List[Dict]:
         })
     return facets
 
-# Reddit API credentials
+# Reddit API credentials from config
 reddit = praw.Reddit(
-    client_id="",
-    client_secret="",
-    user_agent="saltybot"
+    client_id=config.REDDIT_CLIENT_ID,
+    client_secret=config.REDDIT_CLIENT_SECRET,
+    user_agent=config.REDDIT_USER_AGENT
 )
 
-# BlueSky API credentials
-bsky_username = ".bsky.social"  # Replace with your BlueSky username
-bsky_password = ""  # Replace with your BlueSky password
+# BlueSky API credentials from config
+bsky_username = config.BSKY_USERNAME
+bsky_password = config.BSKY_PASSWORD
 
 # Initialize BlueSky client
 bsky = Client()
@@ -116,8 +117,8 @@ except Exception as e:
     logging.error(f"Failed to log in to BlueSky: {e}")
     exit()
 
-# Fetch the top post from the last day from subreddit 
-subreddit = reddit.subreddit('yourSubreddit')
+# Fetch the top post from the last day from r/ufos
+subreddit = reddit.subreddit('ufos')
 top_posts = subreddit.top(time_filter='day', limit=1)
 
 for post in top_posts:
@@ -125,11 +126,11 @@ for post in top_posts:
     post_url = f"https://reddit.com{post.permalink}"
     post_score = post.score
 
-    skeet_content = f"Top post from  in the last day:\n\n{post_title}\nScore: {post_score}\n{post_url}"
+    skeet_content = f"Top post from r/UFOs in the last day. #UFOSky:\n\n{post_title}\nScore: {post_score}\n{post_url} #UFOs #UAP "
 
     if len(skeet_content) > 300:
         truncated_title = post_title[:(300 - len(skeet_content)) + 20] + "..."
-        skeet_content = f"Top post from yourSubreddit in the last day:\n\n{truncated_title}\n{post_url}"
+        skeet_content = f"Top post from r/UFOs in the last day. #UFOSky:\n\n{truncated_title}\n{post_url}"
     
     facets = parse_facets(skeet_content)
     
