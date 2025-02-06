@@ -1,4 +1,4 @@
-# Reddit-to-Bluesky-Public
+# Reddit-to-Bluesky
  
 Copy top post of the day from a subreddit to a bluesky account. 
 
