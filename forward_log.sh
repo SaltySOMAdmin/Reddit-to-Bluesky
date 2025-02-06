@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Variables
-LOG_FILE="/home/log.txt"
-WEBHOOK_URL=""
+LOG_FILE="/home/ubuntu/bluesky/log.txt"
+
+# Load configuration file. Can replace with WEBHOOK_URL="https://yourWebhook.yaddayadda"
+source "/home/ubuntu/bluesky/webhook.txt"  # Replace with the actual path to your config.txt file
 
 # Check if the log file exists
 if [ ! -f "$LOG_FILE" ]; then
