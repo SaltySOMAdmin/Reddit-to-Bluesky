@@ -10,7 +10,7 @@ import config  # Import the config file with credentials
 
 # Configure logging
 logging.basicConfig(
-    filename="/home/ubuntu/bluesky/log.txt",
+    filename="/home/ubuntu/Reddit-to-Bluesky/log.txt",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
