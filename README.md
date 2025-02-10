@@ -9,11 +9,11 @@
 
 #2) Create a python virtual environment in a directory
 
-	/usr/bin/python3 -m venv /home/ubuntu/twitter/
+	/usr/bin/python3 -m venv /home/ubuntu/Reddit-to-Bluesky/
 
 #3) Use the virtual python3 environment
 
-	source /home/ubuntu/twitter/bin/activate
+	source /home/ubuntu/Reddit-to-Bluesky/bin/activate
 
 #4) Install Bluesky SDK and other pre-reqs
 
