@@ -23,7 +23,7 @@
 
 ### 5) Create a file called config.py and save it in the same directory as your script. Enter Reddit and Twitter api credentials.
 
-### 6) Configure forward_log.sh with a discord webhook if you want logs forwarded. Enter the webhook in a .txt in the same directory or directly into the code. 
+### 6) Configure forward_log.sh with a Discord webhook if you want logs forwarded. Enter the webhook in a .txt in the same directory or directly into the code. 
 	
 ### 7) Setup a schedule to run
 
