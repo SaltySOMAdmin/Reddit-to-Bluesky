@@ -22,4 +22,3 @@ jobs:
           script: |
             cd /home/ubuntu/Reddit-to-Bluesky/
             git pull origin main
-            chmod +x forward_log.sh
