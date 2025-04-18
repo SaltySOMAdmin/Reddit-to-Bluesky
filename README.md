@@ -42,9 +42,9 @@ I'm using Ubuntu LTS on an Oracle Cloud VM. There are free-tiers available as of
 
 ## Configure the script.
 
-1. Create a file called config.py and save it in the same directory as your script. Enter Reddit and Twitter api credentials. Check out the example file for formatting. 
+1. Create a file called config.py and save it in the same directory as your script. Enter Reddit and Twitter api credentials. Check out the example file for formatting. Ensure it's listed in your .gitignore file if your repo is public!
 
-2. Configure forward_log.sh with a Discord webhook if you want logs forwarded. Enter the webhook in a .txt in the same directory or directly into the code. 
+2. Configure forward_log.sh with a Discord webhook if you want logs forwarded. Enter the webhook in a .txt in the same directory or directly into the code. List this in .gitignore as well!
 	
 3. Setup a schedule to run
 
