@@ -1,6 +1,10 @@
 # Reddit-to-Bluesky
 - Copy top post of the day from a subreddit to a Bluesky Account. Lots of nonsense in here to account for links and their version of hashtags.
 
+# Setup
+
+## Setup a Linux Host
+I'm using Ubuntu LTS on an Oracle Cloud VM. There are free-tiers available as of today. Google Compute and Amazon AWS are similar products. You can also roll your own host with an old PC or a Raspberry Pi. You'll need to know a bit of Linux CLI or you'll need to be ready to learn! Run these commands through the CLI.
 
 ## Setup Git
 1. [Create a Github account.](https://github.com/join)
@@ -36,11 +40,13 @@
 	
 		pip install praw
 
-5. Create a file called config.py and save it in the same directory as your script. Enter Reddit and Twitter api credentials. Check out the example file for formatting. 
+## Configure the script.
 
-6. Configure forward_log.sh with a Discord webhook if you want logs forwarded. Enter the webhook in a .txt in the same directory or directly into the code. 
+1. Create a file called config.py and save it in the same directory as your script. Enter Reddit and Twitter api credentials. Check out the example file for formatting. 
+
+2. Configure forward_log.sh with a Discord webhook if you want logs forwarded. Enter the webhook in a .txt in the same directory or directly into the code. 
 	
-7. Setup a schedule to run
+3. Setup a schedule to run
 
 		crontab -e 
 	
@@ -52,4 +58,8 @@
 	
 		5 17 * * * /home/ubuntu/Reddit-to-Bluesky/forward_log.sh
 	
+## Setup Continuous Deployment with Github Actions
+
+Allows you to deploy your code via Github vs logging into the VPS and updating the code/uploading a new file. Allows for easier collaboration as well. I followed a guide similar to this one:
+https://docs.github.com/en/actions/use-cases-and-examples/deploying/deploying-with-github-actions
 	
