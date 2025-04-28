@@ -11,7 +11,7 @@ import config  # Import the config file with credentials
 # Configure logging
 logging.basicConfig(
     filename="/home/ubuntu/Reddit-to-Bluesky/log.txt",
-    level=logging.INFO,
+    level=logging.ERROR,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
@@ -136,8 +136,8 @@ for post in top_posts:
     
     try:
         bsky.send_post(skeet_content, facets=facets)
-        logging.info("Skeet posted successfully!")
-        logging.info(skeet_content)
+        print("Skeet posted successfully!")
+        print(skeet_content)
     except Exception as e:
         logging.error(f"Error posting to BlueSky: {e}")
 
